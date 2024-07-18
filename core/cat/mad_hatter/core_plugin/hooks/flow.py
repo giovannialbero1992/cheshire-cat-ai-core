@@ -26,7 +26,7 @@ def before_cat_bootstrap(cat) -> None:
     cat : CheshireCat
         Cheshire Cat instance.
     """
-    pass # do nothing
+    pass  # do nothing
 
 
 # Called after cat bootstrap
@@ -47,7 +47,7 @@ def after_cat_bootstrap(cat) -> None:
     cat : CheshireCat
         Cheshire Cat instance.
     """
-    pass # do nothing
+    pass  # do nothing
 
 
 # Called when a user message arrives.
@@ -149,7 +149,7 @@ def before_cat_recalls_memories(cat) -> None:
         Cheshire Cat instance.
 
     """
-    pass # do nothing
+    pass  # do nothing
 
 
 @hook(priority=0)
@@ -182,7 +182,9 @@ def before_cat_recalls_episodic_memories(episodic_recall_config: dict, cat) -> d
 
 
 @hook(priority=0)
-def before_cat_recalls_declarative_memories(declarative_recall_config: dict, cat) -> dict:
+def before_cat_recalls_declarative_memories(
+    declarative_recall_config: dict, cat
+) -> dict:
     """Hook into semantic search in memories.
 
     Allows to intercept when the Cat queries the memories using the embedded user's input.
@@ -253,7 +255,7 @@ def after_cat_recalls_memories(cat) -> None:
         Cheshire Cat instance.
 
     """
-    pass # do nothing
+    pass  # do nothing
 
 
 # Hook called just before sending response to a client.
@@ -303,10 +305,9 @@ def before_cat_sends_message(message: dict, cat) -> dict:
 
 
 @hook(priority=0)
-def after_cat_sends_message(final_cat_message: dict, cat) -> None:
-    """
-    """
-    pass
+def after_cat_sends_message(final_cat_message: dict, cat) -> dict:
+    """ """
+    return final_cat_message
 
 
 # Hook called just before of inserting the user message document in vector memory
