@@ -406,6 +406,8 @@ class StrayCat:
             )
             # send message back to client
             self.send_chat_message(cat_message)
+            
+            self.mad_hatter.execute_hook("after_cat_sends_message", cat_message, cat=self)
         except Exception as e:
             # Log any unexpected errors
             log.error(e)

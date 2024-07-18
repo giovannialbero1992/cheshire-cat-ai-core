@@ -302,6 +302,13 @@ def before_cat_sends_message(message: dict, cat) -> dict:
     return message
 
 
+@hook(priority=0)
+def after_cat_sends_message(final_cat_message: dict, cat) -> None:
+    """
+    """
+    pass
+
+
 # Hook called just before of inserting the user message document in vector memory
 @hook(priority=0)
 def before_cat_stores_episodic_memory(doc: Document, cat) -> Document:
